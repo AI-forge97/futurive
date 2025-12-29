@@ -16,18 +16,18 @@ const Review: React.FC<ReviewProps> = ({
   designation = "Customer",
 }) => {
   return (
-    <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
-      <div className="flex items-center mb-2">
+    <div className="card card-padding">
+      <div className="flex items-center mb-3">
         {[...Array(5)].map((_, i) => (
-          <FaStar key={i} className={`w-5 h-5 ${i < rating ? "text-green-500" : "text-gray-300"}`} />
+          <FaStar key={i} className={`w-5 h-5 ${i < rating ? "text-purple-600 dark:text-purple-400" : "text-gray-300 dark:text-gray-700"}`} />
         ))}
       </div>
-      <h3 className="text-xl mb-2 text-gray-900 dark:text-white">{title}</h3>
-      <p className="text-gray-600 dark:text-gray-300 mb-4 font-light">{content}</p>
+      <h3 className="heading-6 mb-3">{title}</h3>
+      <p className="body-base text-gray-600 dark:text-gray-400 mb-4">{content}</p>
       <div className="flex items-center">
         <div>
-          <p className="text-gray-900 dark:text-white">{author}</p>
-          <p className="text-sm text-gray-500 dark:text-gray-400 font-light">{designation}</p>
+          <p className="body-base font-semibold text-gray-900 dark:text-white">{author}</p>
+          <p className="body-small text-gray-500 dark:text-gray-400">{designation}</p>
         </div>
       </div>
     </div>

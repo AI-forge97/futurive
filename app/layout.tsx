@@ -4,8 +4,8 @@ import { ThemeProvider } from "next-themes";
 import "styles/globals.css";
 
 export const metadata: Metadata = {
-  title: "Next JS SaaS Starter Template",
-  description: "Next JS SaaS Starter Template",
+  title: "Futurive.ai - AI Services & Products Company",
+  description: "Transform your business with cutting-edge AI solutions. Futurive.ai delivers custom AI services, machine learning models, and intelligent automation for the future.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

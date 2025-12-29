@@ -1,7 +1,7 @@
 {
-  "name": "nextjs-saas-starter-template",
+  "name": "futurive-ai",
   "version": "1.0.0",
-  "description": "Nextjs Saas Starter Template",
+  "description": "Futurive.ai - AI Services and Products Company",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

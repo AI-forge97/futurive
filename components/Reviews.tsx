@@ -15,46 +15,48 @@ interface ReviewsProps {
 const defaultReviews: ReviewData[] = [
   {
     rating: 5,
-    title: "Best app ever!",
+    title: "Transformed Our Operations",
     content:
-      "This app has been a game-changer for me! It's made tracking my daily activities so much easier. I love how intuitive and user-friendly it is.",
-    author: "Jonas Aly",
-    designation: "Founder @ Company",
+      "Futurive.ai's custom ML models revolutionized our predictive maintenance process. We've reduced downtime by 40% and saved millions in operational costs.",
+    author: "Sarah Chen",
+    designation: "CTO @ TechCorp Industries",
   },
   {
     rating: 5,
-    title: "Super helpful to stay organized",
+    title: "Exceptional AI Expertise",
     content:
-      "I can't thank this app enough for helping me stay on top of my tasks. The reminders have saved me from missing important deadlines, and I'm much more organized now.",
-    author: "Mark Bures",
-    designation: "Businessman",
+      "The team at Futurive.ai provided top-tier AI consulting that helped us develop a comprehensive AI strategy. Their insights were invaluable for our digital transformation.",
+    author: "Michael Rodriguez",
+    designation: "VP of Innovation @ Global Finance",
   },
   {
     rating: 5,
-    title: "Great app that saves time",
+    title: "Game-Changing Automation",
     content:
-      "The app's integration with my other tools is seamless. I can easily check my progress and activities without having to switch between multiple platforms.",
-    author: "William Kolas",
-    designation: "Student",
+      "The AI automation solutions implemented by Futurive.ai streamlined our workflows beyond expectations. Our team can now focus on strategic initiatives instead of repetitive tasks.",
+    author: "Jennifer Park",
+    designation: "Operations Director @ RetailNext",
   },
   {
-    rating: 4,
-    title: "Seriously life changing app!",
+    rating: 5,
+    title: "Outstanding Results & Support",
     content:
-      "The insights and reports have been eye-opening. I now have a better understanding of my habits and can make adjustments to improve my productivity.",
-    author: "Andrew Chan",
-    designation: "Manager @ AB Company",
+      "From initial consultation to deployment, Futurive.ai delivered excellence. Their AI integration seamlessly connected with our existing systems and delivered measurable ROI within months.",
+    author: "David Thompson",
+    designation: "CEO @ DataDrive Solutions",
   },
 ];
 
 const Reviews: React.FC<ReviewsProps> = ({ reviews = defaultReviews }) => {
   return (
-    <section className="py-24 bg-gray-50 dark:bg-gray-900">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl text-center mb-8 text-gray-900 dark:text-white">
-          A beautiful reviews section
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-8">
+    <section className="section-muted overflow-x-hidden">
+      <div className="container-content">
+        <div className="section-header">
+          <h2 className="section-title px-4">
+            Trusted by Industry Leaders
+          </h2>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 px-4">
           {reviews.map((review, index) => (
             <Review key={index} {...review} />
           ))}

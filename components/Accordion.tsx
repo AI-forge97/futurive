@@ -13,15 +13,14 @@ interface AccordionItemProps {
 const AccordionItem: React.FC<AccordionItemProps> = ({ title, content, isOpen, toggleOpen }) => {
   return (
     <div className="mb-4">
-      <div
-        className={`w-full rounded-lg overflow-hidden ${
-          isOpen ? "bg-black dark:bg-gray-900" : "bg-black dark:bg-gray-900"
-        }`}
-      >
-        <button className="w-full text-left p-4 flex justify-between items-center" onClick={toggleOpen}>
-          <span className="text-xl font-semibold text-white dark:text-white">{title}</span>
+      <div className={`card-interactive ${isOpen ? 'shadow-xl' : ''}`}>
+        <button
+          className="w-full text-left p-6 flex justify-between items-center focus-ring rounded-lg"
+          onClick={toggleOpen}
+        >
+          <span className="heading-6 text-gray-900 dark:text-white">{title}</span>
           <span className={`transform transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}>
-            <FaChevronDown className="text-2xl text-white" />
+            <FaChevronDown className="text-xl text-purple-600 dark:text-purple-400" />
           </span>
         </button>
         <div
@@ -29,8 +28,8 @@ const AccordionItem: React.FC<AccordionItemProps> = ({ title, content, isOpen, t
             isOpen ? "max-h-[1000px]" : "max-h-0"
           }`}
         >
-          <div className="p-4">
-            <p className="text-white font-light">{content}</p>
+          <div className="px-6 pb-6 pt-2 animate-fade-in">
+            <p className="body-base text-gray-600 dark:text-gray-400">{content}</p>
           </div>
         </div>
       </div>
@@ -40,18 +39,18 @@ const AccordionItem: React.FC<AccordionItemProps> = ({ title, content, isOpen, t
 
 const defaultAccordionItems = [
   {
-    title: "Sign up for free",
-    content: "Start your journey with a 34-day trial. It's easy no credit card or commitment.",
+    title: "What AI services does Futurive.ai offer?",
+    content: "We provide custom AI model development, intelligent automation, predictive analytics, AI consulting, seamless integration services, and cloud-based AI solutions tailored to your business needs.",
   },
   {
-    title: "Easy to use",
+    title: "How does the AI implementation process work?",
     content:
-      "Our app is designed to be user-friendly and easy to use. We want to provide a seamless experience for your users so that you can focus on what matters.",
+      "We start with a comprehensive consultation to understand your needs, then develop a strategic roadmap, build and train custom models, integrate with your systems, and provide ongoing support and optimization.",
   },
   {
-    title: "Focus on what matters",
+    title: "What industries do you serve?",
     content:
-      "With better financial management, you can reduce money-related stress and focus on what matters most. More to come.",
+      "Futurive.ai serves diverse industries including finance, healthcare, retail, manufacturing, logistics, and technology. Our AI solutions are adaptable to any sector looking to leverage intelligent automation.",
   },
 ];
 
