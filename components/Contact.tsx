@@ -1,30 +1,6 @@
-"use client";
-
-import { useState } from "react";
-import Link from "next/link";
-import { FaCalendarAlt, FaPaperPlane, FaLinkedin, FaEnvelope, FaTwitter, FaGithub } from "react-icons/fa";
+import { FaCalendarAlt, FaPaperPlane, FaLinkedin, FaEnvelope, FaTwitter, FaGithub, FaMapMarkerAlt } from "react-icons/fa";
 
 const Contact: React.FC = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    company: "",
-    message: "",
-  });
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Form submission will be handled by Formspree or Web3Forms
-    // User will need to add their form endpoint to the form action attribute
-    console.log("Form submitted:", formData);
-  };
 
   return (
     <section id="contact" className="section overflow-x-hidden bg-gradient-to-br from-gray-50 to-white dark:from-gray-950 dark:to-black">
@@ -78,9 +54,9 @@ const Contact: React.FC = () => {
               </div>
             </div>
 
-            {/* Calendly Button - Replace href with your Calendly URL */}
+            {/* Calendly Button */}
             <a
-              href="https://calendly.com/your-calendly-link"
+              href="https://calendly.com/contact-futurive/30min"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary w-full justify-center"
@@ -113,13 +89,18 @@ const Contact: React.FC = () => {
               </p>
             </div>
 
-            {/* Contact Form - Add your Formspree/Web3Forms endpoint to action */}
+            {/* Contact Form - Web3Forms */}
             <form
-              onSubmit={handleSubmit}
-              action="https://formspree.io/f/YOUR_FORM_ID"
+              action="https://api.web3forms.com/submit"
               method="POST"
               className="space-y-4"
             >
+              {/* Web3Forms Access Key */}
+              <input type="hidden" name="access_key" value="7534a64a-3bd8-402a-9ed3-345be1be53fd" />
+
+              {/* Optional: Redirect after submission */}
+              <input type="hidden" name="redirect" value="https://futurive.ai/thank-you" />
+
               <div>
                 <label htmlFor="name" className="block body-base font-semibold text-gray-900 dark:text-white mb-2">
                   Name *
@@ -129,8 +110,6 @@ const Contact: React.FC = () => {
                   id="name"
                   name="name"
                   required
-                  value={formData.name}
-                  onChange={handleChange}
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all"
                   placeholder="Your full name"
                 />
@@ -145,8 +124,6 @@ const Contact: React.FC = () => {
                   id="email"
                   name="email"
                   required
-                  value={formData.email}
-                  onChange={handleChange}
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all"
                   placeholder="you@company.com"
                 />
@@ -160,8 +137,6 @@ const Contact: React.FC = () => {
                   type="text"
                   id="company"
                   name="company"
-                  value={formData.company}
-                  onChange={handleChange}
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all"
                   placeholder="Your company name"
                 />
@@ -176,8 +151,6 @@ const Contact: React.FC = () => {
                   name="message"
                   required
                   rows={5}
-                  value={formData.message}
-                  onChange={handleChange}
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all resize-none"
                   placeholder="Tell us about your project and how we can help..."
                 />
@@ -205,9 +178,17 @@ const Contact: React.FC = () => {
                   href="mailto:contact@futurive.ai"
                   className="flex items-center justify-center md:justify-start body-base text-gray-600 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors"
                 >
-                  <FaEnvelope className="mr-2" />
+                  <FaEnvelope className="mr-2 flex-shrink-0" />
                   contact@futurive.ai
                 </a>
+                <div className="flex items-start justify-center md:justify-start body-base text-gray-600 dark:text-gray-400">
+                  <FaMapMarkerAlt className="mr-2 mt-1 flex-shrink-0" />
+                  <span>
+                    Building A1, Dubai Digital Park,<br />
+                    Dubai Silicon Oasis, Dubai,<br />
+                    United Arab Emirates
+                  </span>
+                </div>
               </div>
             </div>
 

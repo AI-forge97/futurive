@@ -88,18 +88,22 @@ const About: React.FC = () => {
         </div>
 
         {/* What Futurive Means */}
-        <div className="max-w-5xl mx-auto mb-20">
+        <div className="max-w-5xl mx-auto mb-20 px-4">
           <div className="text-center">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
               What "Futurive" Means
             </h2>
-            <div className="inline-block bg-white dark:bg-gray-900 rounded-2xl p-8 border-2 border-purple-200 dark:border-purple-900 shadow-lg">
-              <p className="text-5xl sm:text-6xl font-bold mb-4">
-                <span className="bg-gradient-to-r from-purple-600 to-blue-400 bg-clip-text text-transparent">Future</span>
-                <span className="text-gray-400 dark:text-gray-600 mx-2">+</span>
-                <span className="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">Innovative</span>
-              </p>
-              <p className="text-lg text-gray-600 dark:text-gray-400 font-light max-w-2xl">
+            <div className="inline-block bg-white dark:bg-gray-900 rounded-2xl p-6 sm:p-8 border-2 border-purple-200 dark:border-purple-900 shadow-lg w-full max-w-3xl">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 mb-4">
+                <span className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-purple-600 to-blue-400 bg-clip-text text-transparent">
+                  Future
+                </span>
+                <span className="text-2xl sm:text-3xl md:text-4xl text-gray-400 dark:text-gray-600">+</span>
+                <span className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">
+                  Innovative
+                </span>
+              </div>
+              <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 font-light max-w-2xl mx-auto px-2">
                 We believe the future belongs to those who design it, and we're here to engineer that future with AI, today.
               </p>
             </div>
