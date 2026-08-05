@@ -1,1 +1,1 @@
-This is official setup for futurive
+This is official setup for futurive.ai
