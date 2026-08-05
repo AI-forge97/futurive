@@ -4,308 +4,194 @@
 
 /* ============================================
    FUTURIVE.AI DESIGN SYSTEM
+   Palette: Ink Navy · Warm Sand · Deep Gold · Gulf Teal
    ============================================ */
 
 @layer base {
-  /* Typography Scale - Fluid & Responsive */
   :root {
-    /* Font Family */
+    /* Named design tokens */
+    --color-ink:       #0D1B2A;
+    --color-ink-mid:   #152435;
+    --color-ink-light: #1E3448;
+    --color-sand:      #F4EFE6;
+    --color-sand-mid:  #E9E3D8;
+    --color-sand-dark: #D8D0C4;
+    --color-gold:      #C8A84B;
+    --color-gold-light:#D9BC6E;
+    --color-gold-dark: #A88A35;
+    --color-teal:      #2A7F7F;
+    --color-teal-light:#3A9E9E;
+
+    /* Semantic aliases */
+    --color-bg:           var(--color-ink);
+    --color-bg-raised:    var(--color-ink-mid);
+    --color-bg-surface:   var(--color-ink-light);
+    --color-text:         var(--color-sand);
+    --color-text-muted:   #8FA3B4;
+    --color-text-faint:   #536478;
+    --color-accent:       var(--color-gold);
+    --color-accent-hover: var(--color-gold-dark);
+    --color-border:       rgba(255 255 255 / 0.08);
+    --color-border-gold:  rgba(200 168 75 / 0.3);
+
+    /* Typography */
     --font-primary: 'Inter Tight', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
-    /* Typography Scale - Mobile First */
-    --text-xs: 0.75rem;      /* 12px */
-    --text-sm: 0.875rem;     /* 14px */
-    --text-base: 1rem;       /* 16px */
-    --text-lg: 1.125rem;     /* 18px */
-    --text-xl: 1.25rem;      /* 20px */
-    --text-2xl: 1.5rem;      /* 24px */
-    --text-3xl: 1.875rem;    /* 30px */
-    --text-4xl: 2.25rem;     /* 36px */
-    --text-5xl: 3rem;        /* 48px */
-    --text-6xl: 3.75rem;     /* 60px */
-    --text-7xl: 4.5rem;      /* 72px */
+    /* Spacing — 8px grid */
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-6: 1.5rem;
+    --space-8: 2rem;
+    --space-12: 3rem;
+    --space-16: 4rem;
+    --space-20: 5rem;
+    --space-24: 6rem;
 
-    /* Font Weights */
-    --font-light: 300;
-    --font-normal: 400;
-    --font-medium: 500;
-    --font-semibold: 600;
-    --font-bold: 700;
-    --font-extrabold: 800;
-
-    /* Line Heights */
-    --leading-tight: 1.25;
-    --leading-snug: 1.375;
-    --leading-normal: 1.5;
-    --leading-relaxed: 1.625;
-    --leading-loose: 2;
-
-    /* Letter Spacing */
-    --tracking-tighter: -0.05em;
-    --tracking-tight: -0.025em;
-    --tracking-normal: 0;
-    --tracking-wide: 0.025em;
-
-    /* Spacing Scale - 8px Grid System */
-    --space-1: 0.25rem;   /* 4px */
-    --space-2: 0.5rem;    /* 8px */
-    --space-3: 0.75rem;   /* 12px */
-    --space-4: 1rem;      /* 16px */
-    --space-5: 1.25rem;   /* 20px */
-    --space-6: 1.5rem;    /* 24px */
-    --space-8: 2rem;      /* 32px */
-    --space-10: 2.5rem;   /* 40px */
-    --space-12: 3rem;     /* 48px */
-    --space-16: 4rem;     /* 64px */
-    --space-20: 5rem;     /* 80px */
-    --space-24: 6rem;     /* 96px */
-    --space-32: 8rem;     /* 128px */
-
-    /* Section Spacing */
-    --section-padding-mobile: 4rem;
-    --section-padding-desktop: 6rem;
-    --section-gap: 5rem;
-
-    /* Container Widths */
-    --container-sm: 640px;
-    --container-md: 768px;
-    --container-lg: 1024px;
-    --container-xl: 1280px;
-    --container-2xl: 1536px;
-
-    /* Border Radius */
-    --radius-sm: 0.375rem;   /* 6px */
-    --radius-md: 0.5rem;     /* 8px */
-    --radius-lg: 0.75rem;    /* 12px */
-    --radius-xl: 1rem;       /* 16px */
-    --radius-2xl: 1.5rem;    /* 24px */
-    --radius-full: 9999px;
-
-    /* Shadows */
-    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-    --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+    /* Radii */
+    --radius-sm: 0.375rem;
+    --radius-md: 0.5rem;
+    --radius-lg: 0.75rem;
+    --radius-xl: 1rem;
+    --radius-2xl: 1.5rem;
 
     /* Transitions */
     --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
     --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
     --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
 
-    /* Z-Index Scale */
-    --z-dropdown: 1000;
+    /* Z-index scale */
     --z-sticky: 1020;
-    --z-fixed: 1030;
-    --z-modal-backdrop: 1040;
-    --z-modal: 1050;
-    --z-popover: 1060;
-    --z-tooltip: 1070;
+    --z-modal:  1050;
   }
 
-  /* Light Mode Colors */
-  :root {
-    /* Primary Brand Colors */
-    --color-primary-50: 250 245 255;
-    --color-primary-100: 243 232 255;
-    --color-primary-200: 233 213 255;
-    --color-primary-300: 216 180 254;
-    --color-primary-400: 192 132 252;
-    --color-primary-500: 168 85 247;   /* Main Purple */
-    --color-primary-600: 147 51 234;
-    --color-primary-700: 126 34 206;
-    --color-primary-800: 107 33 168;
-    --color-primary-900: 88 28 135;
-
-    /* Secondary Brand Colors */
-    --color-secondary-50: 239 246 255;
-    --color-secondary-100: 219 234 254;
-    --color-secondary-200: 191 219 254;
-    --color-secondary-300: 147 197 253;
-    --color-secondary-400: 96 165 250;
-    --color-secondary-500: 59 130 246;   /* Main Blue */
-    --color-secondary-600: 37 99 235;
-    --color-secondary-700: 29 78 216;
-    --color-secondary-800: 30 64 175;
-    --color-secondary-900: 30 58 138;
-
-    /* Neutral Colors */
-    --color-gray-50: 249 250 251;
-    --color-gray-100: 243 244 246;
-    --color-gray-200: 229 231 235;
-    --color-gray-300: 209 213 219;
-    --color-gray-400: 156 163 175;
-    --color-gray-500: 107 114 128;
-    --color-gray-600: 75 85 99;
-    --color-gray-700: 55 65 81;
-    --color-gray-800: 31 41 55;
-    --color-gray-900: 17 24 39;
-    --color-gray-950: 3 7 18;
-
-    /* Semantic Colors */
-    --color-background: 255 255 255;
-    --color-foreground: 17 24 39;
-    --color-muted: 243 244 246;
-    --color-muted-foreground: 107 114 128;
-    --color-border: 229 231 235;
-
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, rgb(147 51 234) 0%, rgb(59 130 246) 100%);
-    --gradient-primary-hover: linear-gradient(135deg, rgb(126 34 206) 0%, rgb(37 99 235) 100%);
-  }
-
-  /* Dark Mode Colors */
-  .dark {
-    --color-background: 0 0 0;
-    --color-foreground: 249 250 251;
-    --color-muted: 17 24 39;
-    --color-muted-foreground: 156 163 175;
-    --color-border: 31 41 55;
-  }
-
-  /* Base Styles */
   html {
     overflow-x: hidden;
-    width: 100%;
+    scroll-behavior: smooth;
   }
 
   body {
-    @apply bg-white dark:bg-black text-gray-900 dark:text-gray-50;
+    background-color: var(--color-ink);
+    color: var(--color-sand);
     font-family: var(--font-primary);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
-    width: 100%;
-    position: relative;
   }
 
-  /* Prevent horizontal scroll on mobile */
+  /* RTL-ready: use logical properties throughout */
   * {
-    max-width: 100%;
+    box-sizing: border-box;
   }
 
-  /* Allow specific elements to be wider */
-  html, body, div, section, main, header, footer {
-    max-width: none;
+  /* Reduced motion: disable all animations */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 }
 
 /* ============================================
-   TYPOGRAPHY SYSTEM
+   TYPOGRAPHY
    ============================================ */
 
 @layer components {
-  /* Display Headings */
   .heading-display {
     @apply text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-tight;
   }
-
-  /* Page Headings */
   .heading-1 {
     @apply text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight;
   }
-
   .heading-2 {
     @apply text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-tight;
   }
-
   .heading-3 {
-    @apply text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight leading-snug;
+    @apply text-2xl sm:text-3xl font-bold tracking-tight leading-snug;
   }
-
   .heading-4 {
-    @apply text-xl sm:text-2xl lg:text-3xl font-semibold tracking-tight leading-snug;
+    @apply text-xl sm:text-2xl font-semibold tracking-tight leading-snug;
   }
-
   .heading-5 {
-    @apply text-lg sm:text-xl lg:text-2xl font-semibold leading-snug;
+    @apply text-lg sm:text-xl font-semibold leading-snug;
   }
-
   .heading-6 {
-    @apply text-base sm:text-lg lg:text-xl font-semibold leading-normal;
+    @apply text-base sm:text-lg font-semibold leading-normal;
   }
-
-  /* Body Text */
   .body-large {
     @apply text-lg sm:text-xl font-light leading-relaxed;
   }
-
   .body-base {
     @apply text-base sm:text-lg font-normal leading-relaxed;
   }
-
   .body-small {
     @apply text-sm sm:text-base font-normal leading-normal;
   }
-
-  /* Special Text */
-  .text-gradient-primary {
-    @apply bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent;
-  }
-
-  .badge {
-    @apply inline-block bg-gradient-to-r from-purple-600 to-blue-600 text-white text-sm font-semibold px-4 py-1.5 rounded-full;
+  .label {
+    @apply text-xs font-semibold tracking-widest uppercase;
   }
 }
 
 /* ============================================
-   BUTTON SYSTEM
+   BUTTONS
    ============================================ */
 
 @layer components {
-  /* Base Button */
   .btn {
-    @apply inline-flex items-center justify-center gap-2 px-8 py-3 rounded-lg font-semibold transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed;
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-semibold transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-ink disabled:opacity-50 disabled:cursor-not-allowed;
   }
 
-  /* Primary Button */
+  /* Gold primary — used for main CTAs */
   .btn-primary {
-    @apply btn bg-gradient-to-r from-purple-600 to-blue-600 text-white shadow-lg hover:from-purple-700 hover:to-blue-700 hover:shadow-xl focus:ring-purple-500/50;
+    background-color: var(--color-gold);
+    color: var(--color-ink);
+    @apply btn hover:brightness-90 focus-visible:ring-gold;
   }
 
-  /* Secondary Button */
-  .btn-secondary {
-    @apply btn bg-white dark:bg-gray-900 text-gray-900 dark:text-white border-2 border-gray-300 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 focus:ring-gray-500/50;
+  /* Ghost — outlined on dark background */
+  .btn-ghost {
+    @apply btn border border-sand/30 text-sand hover:bg-sand/10 focus-visible:ring-sand/50;
   }
 
-  /* Button Sizes */
-  .btn-sm {
-    @apply px-6 py-2 text-sm;
+  /* Teal secondary */
+  .btn-teal {
+    background-color: var(--color-teal);
+    color: var(--color-sand);
+    @apply btn hover:brightness-90 focus-visible:ring-teal;
   }
 
   .btn-lg {
-    @apply px-10 py-4 text-lg;
+    @apply px-8 py-4 text-lg;
+  }
+  .btn-sm {
+    @apply px-4 py-2 text-sm;
   }
 }
 
 /* ============================================
-   CARD SYSTEM
+   CARDS
    ============================================ */
 
 @layer components {
-  /* Base Card */
   .card {
-    @apply bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 transition-all duration-300;
+    background-color: var(--color-ink-mid);
+    border: 1px solid var(--color-border);
+    @apply rounded-2xl transition-all duration-300;
   }
 
-  /* Card with Hover */
   .card-interactive {
-    @apply card hover:shadow-xl hover:-translate-y-1;
+    @apply card hover:border-gold/30 hover:-translate-y-0.5 hover:shadow-2xl;
   }
 
-  /* Card Padding */
   .card-padding {
     @apply p-6 sm:p-8;
   }
 
-  /* Feature Card */
-  .feature-card {
-    @apply card-interactive card-padding;
-  }
-
-  /* Gradient Card */
-  .card-gradient {
-    @apply bg-gradient-to-br from-purple-600 to-blue-600 text-white rounded-2xl p-8 shadow-xl;
+  .card-gold-border {
+    @apply card border-gold/20;
   }
 }
 
@@ -314,119 +200,138 @@
    ============================================ */
 
 @layer components {
-  /* Standard Section */
+  /* Dark sections — primary canvas */
   .section {
     @apply py-16 sm:py-20 lg:py-24;
   }
 
-  /* Section with Background */
-  .section-muted {
-    @apply section bg-gray-50 dark:bg-gray-950;
+  /* Sand-toned sections — contrast rhythm */
+  .section-sand {
+    background-color: var(--color-sand);
+    color: var(--color-ink);
+    @apply py-16 sm:py-20 lg:py-24;
   }
 
-  /* Section Container */
-  .section-container {
-    @apply container mx-auto px-4 sm:px-6 lg:px-8;
+  .section-raised {
+    background-color: var(--color-ink-mid);
+    @apply py-16 sm:py-20 lg:py-24;
   }
 
-  /* Section Header */
   .section-header {
     @apply text-center mb-12 lg:mb-16;
   }
 
-  /* Section Title */
-  .section-title {
-    @apply heading-2 mb-4;
+  .section-label {
+    @apply label text-gold mb-4 block;
   }
 
-  /* Section Description */
-  .section-description {
-    @apply body-large text-gray-600 dark:text-gray-400 max-w-3xl mx-auto;
-  }
-}
-
-/* ============================================
-   UTILITY CLASSES
-   ============================================ */
-
-@layer utilities {
-  /* Smooth Scroll */
-  .smooth-scroll {
-    scroll-behavior: smooth;
-  }
-
-  /* Focus Visible */
-  .focus-ring {
-    @apply focus:outline-none focus:ring-4 focus:ring-purple-500/50 focus:ring-offset-2;
-  }
-
-  /* Glass Effect */
-  .glass {
-    @apply bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg;
-  }
-
-  /* Gradient Text */
-  .gradient-text {
-    @apply bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent;
-  }
-
-  /* Gradient Border */
-  .gradient-border {
-    @apply border-2 border-transparent bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-border;
-  }
-}
-
-/* ============================================
-   ANIMATIONS
-   ============================================ */
-
-@layer utilities {
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes slideIn {
-    from {
-      transform: translateX(-10px);
-      opacity: 0;
-    }
-    to {
-      transform: translateX(0);
-      opacity: 1;
-    }
-  }
-
-  .animate-fade-in {
-    animation: fadeIn var(--transition-base) ease-out;
-  }
-
-  .animate-slide-in {
-    animation: slideIn var(--transition-base) ease-out;
-  }
-}
-
-/* ============================================
-   RESPONSIVE HELPERS
-   ============================================ */
-
-@layer utilities {
-  /* Container Queries Support */
   .container-content {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 
   .container-narrow {
-    @apply max-w-4xl mx-auto px-4 sm:px-6;
+    @apply max-w-3xl mx-auto px-4 sm:px-6;
+  }
+}
+
+/* ============================================
+   WAVEFORM — Signature element
+   CSS-only, respects prefers-reduced-motion
+   ============================================ */
+
+@layer components {
+  .waveform {
+    @apply flex items-center gap-[3px];
+    height: 40px;
   }
 
-  .container-wide {
-    @apply max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8;
+  .waveform-bar {
+    width: 3px;
+    height: 100%;
+    background-color: var(--color-gold);
+    border-radius: 9999px;
+    transform-origin: center;
+    @apply animate-wave-1;
   }
+
+  .waveform-bar:nth-child(2)  { @apply animate-wave-2; }
+  .waveform-bar:nth-child(3)  { @apply animate-wave-3; }
+  .waveform-bar:nth-child(4)  { @apply animate-wave-4; }
+  .waveform-bar:nth-child(5)  { @apply animate-wave-5; }
+  .waveform-bar:nth-child(6)  { @apply animate-wave-6; }
+  .waveform-bar:nth-child(7)  { @apply animate-wave-7; }
+
+  /* Static fallback when motion reduced */
+  @media (prefers-reduced-motion: reduce) {
+    .waveform-bar {
+      animation: none;
+      transform: scaleY(0.6);
+    }
+  }
+}
+
+/* ============================================
+   UTILITIES
+   ============================================ */
+
+@layer utilities {
+  .text-gold {
+    color: var(--color-gold);
+  }
+
+  .text-muted {
+    color: var(--color-text-muted);
+  }
+
+  .text-faint {
+    color: var(--color-text-faint);
+  }
+
+  .bg-ink {
+    background-color: var(--color-ink);
+  }
+
+  .bg-ink-mid {
+    background-color: var(--color-ink-mid);
+  }
+
+  .bg-sand {
+    background-color: var(--color-sand);
+  }
+
+  .border-subtle {
+    border-color: var(--color-border);
+  }
+
+  .focus-ring {
+    @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-gold/60 focus-visible:ring-offset-2 focus-visible:ring-offset-ink;
+  }
+
+  /* RTL logical property helpers */
+  .ps-4 { padding-inline-start: 1rem; }
+  .pe-4 { padding-inline-end: 1rem; }
+  .ms-auto { margin-inline-start: auto; }
+  .me-auto { margin-inline-end: auto; }
+
+  .animate-fade-up {
+    animation: fadeUp 0.5s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.4s ease-out forwards;
+  }
+}
+
+/* ============================================
+   KEYFRAMES (defined here for global access)
+   ============================================ */
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
